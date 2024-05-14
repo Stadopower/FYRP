@@ -105,7 +105,7 @@ def majority_pred(X, clf, n):
     # left, right, rest
     pred_direct = [0,0,0]
     for i, epoch in enumerate(X):
-        # Predicting each 200ms windows individually
+        # Predicting each epoch individually
         y_driving_pred = predict_against_threshold_indiv(clf, X[i:i+1,:,:], 0.2)
         pred_direct[y_driving_pred] += 1
         y_preds.append(y_driving_pred)
