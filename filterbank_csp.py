@@ -13,6 +13,7 @@ from continuous_control_bci.modelling.csp_classifier import create_csp_classifie
 from scipy.signal import cheby2, sosfiltfilt
 from sklearn.pipeline import Pipeline
 from sklearn.svm import SVC
+from sklearn.metrics import f1_score
 
 
 def filter_bank(raw:np.ndarray, freq_bands, order:int):
@@ -93,7 +94,6 @@ def create_csp_svm_classifier(X_train: np.ndarray, y_train: np.ndarray, rank):
 
 def majority_pred(X, clf, n):
     """
-
     :param X: Data to make predictions on
     :param clf: Classifier to use
     :param n: number of epochs that should be aggregated over
@@ -106,7 +106,7 @@ def majority_pred(X, clf, n):
     pred_direct = [0,0,0]
     for i, epoch in enumerate(X):
         # Predicting each epoch individually
-        y_driving_pred = predict_against_threshold_indiv(clf, X[i:i+1,:,:], 0.2)
+        y_driving_pred = predict_against_threshold_indiv(clf, X[i:i+1,:,:], 0.3)
         pred_direct[y_driving_pred] += 1
         y_preds.append(y_driving_pred)
 
