@@ -53,7 +53,7 @@ SUBJECT_IDS = ["061",
                "587",
                "643",
                "656",
-#               "682", Something is going wrong here
+               "682",
                "744",
                "812",
                "840",
