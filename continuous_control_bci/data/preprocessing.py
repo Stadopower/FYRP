@@ -49,7 +49,7 @@ def make_epochs(raw: mne.io.Raw, include_rest=True, tmin=1.25, tmax=5) -> mne.Ep
         event_ids,
         tmin,
         tmax,
-        reject=reject,
+        #reject=reject,
         baseline=None,
         preload=True,
     )
@@ -74,7 +74,7 @@ def make_epochs(raw: mne.io.Raw, include_rest=True, tmin=1.25, tmax=5) -> mne.Ep
             dict(rest=2),
             tmin,
             tmax,
-            reject=reject,
+            #reject=reject,
             baseline=None,
             preload=True,
         )
