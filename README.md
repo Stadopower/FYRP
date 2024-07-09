@@ -1,9 +1,10 @@
 # FYRP
  First Year Research Project
-filter_bank_csp.py Holds some functions needed to run the code, I should rename it, i thought the main approach i will look into is a filter bank.
+filter_bank_csp.py Holds some functions needed to run the code, not only for the filter bank approach but also other functions.
 
 
-The main notebooks in this Github are sliding_window.ipynb for the starting approach of just using windows, first I used smaller 0.2s windows without overlap to test wether or not such small windwos can make suitable predictions, currently it uses 2s windwos with a overlap of 1.8 seconds to still make predictions every 200ms.
+There is one main notebook for each approach. sliding_windows.ipynb for creating the baseline predictions for the three and two class problem. filter_bank.ipynb for the filter bank approach and indiv_frequency.ipynb for the individual frequency approach. Inside the filter_bank notebook some investigation on training and testing on calibration and training and testing on the driving data alone was conducted. Inside both the sliding approach and the individual_frequency notebook the reversing training and testing was investigated.
 
-filter_bank.ipynb for the filter bank approach, using the smaller 200ms windwos as having mutliples of the data (for each filter bank) and longer windwos is not working on my machine. And lastly now i made indiv_frequency looking at the IAF of the three well working individuals.
-The figures located in the folder figures are made with the function provided from Ivo but something went wrong.
+Some listing of results can be found in the results.ipynb and some investigation of ERDS, PSD and CSP was done in pattern_analysis.ipynb.
+
+Overall the different approaches to increase the performance did not work and one of the main problems that was found was the difference in frequency peaks between calbration and testing data.
